@@ -1,0 +1,567 @@
+/* Imported Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Defining reusable variables for color*/
+:root {
+  --main-color: #b74b4b;      /*--declairing  main color as the variable for #b74b4b*/
+  --second-ng-color: #111;    /*--declairing  second ng color as the variable for #111*/
+  --bg-color: #000;           /*--declairing  bg color as the variable for #000*/
+  --text-color: #fff;         /*--declairing  text color as the variable for #fff*/
+}
+
+
+/* Removing all the  defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+                            /*-------------styling the home page-------------*/
+/* Setting  the base font size */
+html {
+  font-size: 62.5%;
+}
+
+/*  background and  the layout of the body */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;          /* body take the  full viewport height */
+  overflow-x: hidden;         /*preventing horizontal scrolling */
+  position: relative;         /*positioning */
+  padding-top: 8rem;          /*applying padding*/
+}
+
+/* Creating a nice glowing  effect in the background */
+body::before {
+  content: "";                                               /*cotent*/
+  position: absolute;                                        /*positioning it*/
+  inset: 0;                                                  /*streaching it to cover the whole body*/
+  background: radial-gradient(circle at center, rgba(183, 75, 75, 0.8) 0%, rgba(0, 0, 0, 0.85) 80%);  /* Creating a  glow  */
+  z-index: -1;                                               /*putting element behind the content*/
+  box-shadow: 0 0 50px 50px rgba(183, 75, 75, 0.75);       /*glow/shadow around the body*/
+}
+
+
+/*  A Fixed header with logo and navigation menu */
+header {
+  position: fixed;                                           /*positioning*/
+  top: 0;                                                    /*aligning the header to the top*/
+  left: 0;                                                   /*moving it to left*/
+  width: 100%;                                               /*assgning the width*/
+  padding: 1rem 9%;                                          /*adding spaces from top to bottom and left to right*/
+  display: flex;                                             /*usimg flex box for logo and nav*/
+  justify-content: space-between;                            /*putting elements from left to right*/
+  align-items: center;                                       /*aligning the items in the center*/
+  background: transparent;                                   /*making the background transparent*/
+  z-index: 100;                                              /*placing the header above other content*/
+  margin-top: 2rem;
+}
+
+                                  /* ------------styling the logo------------- */
+.logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--main-color);
+  cursor: pointer;                                            /*changes cursor to hand icon while hovering*/
+  transition: transform 0.5s ease;                            /*smoothly animates*/
+} 
+
+/*hover effect */
+.logo:hover {
+  transform: scale(1.1);                                      /*enlarges the logo while hovering*/
+}
+
+/* Nav links */
+nav a {
+  margin-left: 4rem;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 500;                                            /*set fonts thickness to medium*/
+  border-radius: 0.5rem;                                       /*round corners*/
+  transition: 0.3s ease;
+}
+
+/* hover  for  the navigation links */
+nav a:hover,
+nav a.active {
+  background: var(--main-color);
+  color: #000;
+}
+
+                             /* ----------------styling  Home Section ---------------- */
+/* Flex container  */
+.home {
+  display: flex;
+  flex-wrap: wrap;                                               /* makes the items  drop to the next line if there is not enough space */
+  gap: 8rem;                                                     /* add spacing between flex items*/
+  justify-content: space-between;                                /*distributes spaces evenly*/
+  align-items: center;
+  padding: 10rem 9% 5rem;
+}
+
+/* width */
+.home-content {
+  max-width: 50%;                                                   /*limting the content to half*/                                            
+}
+
+/* Heading-grestings */
+.home-content h1 {
+  font-size: 6rem;                                                   /*large font*/
+  font-weight: 700;                                                  /*bold font*/
+}
+
+/*heading */
+.home-content h3 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;                                               /*space below heading*/
+}
+
+/* Typing effect */
+.typing-text {
+  font-size: 3.4rem;
+  font-weight: 600;
+}
+
+/* Highlighted text */
+span {
+  color: var(--main-color);
+}
+
+                              /* ---------------------- Profile Image -------------------- */
+/* styling images for  both home and about section */
+.home-img img,
+.about-img img {
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  transition: all 0.4s ease-in-out;
+}
+
+/*---------float effect----------*/
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.home-img img,
+.about-img img {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+                          /* ----------------- Social Links ----------------- */
+/*social media icons */
+.social-icons a {
+  width: 4rem;
+  height: 4rem;
+  margin: 3rem 1.5rem 3rem 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #000;
+  background: #fff;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+/* Hover effect */
+.social-icons a:hover {
+  background: #fff;
+  color: var(--main-color);
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+                          /* ---------------------- Buttons ----------------------- */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 4rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid var(--main-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/*hover effect*/
+.btn:hover {
+  background: var(--main-color);
+  color: #fff;
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+                            /* ------------------- About Section -------------------- */
+/* background and layout  */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  padding: 10rem 9% 5rem;
+  background: var(--second-ng-color);
+}
+
+.about-content h2 {
+  font-size: 7rem;
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.8rem;
+}
+
+.about-content .btn {
+  margin: 3rem 0;
+}
+
+/* -------- Scrollbar  effect--------- */
+::-webkit-scrollbar {
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+/* ---- Responsive adjustment---- */
+@media (max-width: 1000px) {                   /*when screen width is 1000px or smaller*/
+  .home {
+    flex-direction: column;                    /* Stack items vertically  */
+    gap: 4rem;                                 /* decrease th gap*/
+    margin: 5rem 4rem;                         /* adds spacing*/
+  }
+  .home-content h1 {
+    font-size: 5rem;                           /*decreases the size of thefont*/
+  }
+  .home-img img {
+    margin-top: 4rem;                          /*adds spaces above images*/
+  }
+}
+
+                             /* ------------ styling services section-------------- */
+/*-heading*/                             
+.heading {
+  font-size: 7rem;
+  color: #fff;
+  text-align: center;
+  margin: 7rem 0;
+}
+
+
+.services {
+  background: var(--bg-color);
+  color: #fff;
+  padding: 5rem 9%;
+}
+
+.services-container {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));       /*automatically adds columns as much as possible*/
+  align-items: center;
+}
+
+.service-box {
+  background: var(--main-color);
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 5px solid transparent;
+}
+
+.service-box:hover {
+  background: var(--second-ng-color);
+  color: var(--main-color);
+  border: 5px solid var(--main-color);
+  transform: scale(1.03);
+}
+
+.service-info {
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-info i {
+  font-size: 6rem;
+  color: #fff;
+}
+
+.service-box:hover i {
+  color: var(--main-color);
+}
+
+.service-info h4 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  font-weight: 800;
+}
+
+.service-info p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+                              /* ---------------- Projects Section -------------------- */
+.projects-container {
+  display: grid;
+  gap: 2rem;
+  padding: 0 9%;
+  grid-template-columns: repeat(3, 1fr);      /*creating 3 same kind of colums each contaning same fraction of the space available*/
+}
+
+
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);  /* when screen is 900px or less all columns turns into 2 columns*/ 
+  }
+}
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: 1fr;             /* when screen is 600px or less all columns turns into single columns*/
+  }
+}
+
+.project-box {
+  background: #222;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+  transform: scale(1.05);
+}
+
+.project-box img:hover {
+  transform: scale(1.1);
+}
+
+.project-info {
+  padding: 1rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  background-color: black;
+}
+
+.project-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.project-description {
+  font-size: 1.4rem;
+  color: #ccc;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+                                 /* ----------------Project links-------------------- */
+.projects a {
+  color: #b74b4b;
+  text-decoration: none;                /*removing underline from the links*/
+}
+
+.projects a:hover {
+  color: #d45c5c;
+}
+
+                                   /* ------ 'More Projects' button -----------*/
+.more-projects {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: var(--main-color);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  box-shadow: 0 0 20px var(--main-color);
+  cursor: pointer;
+  transition:  0.3s ease;
+}
+
+.more-projects:hover {
+  background: #a03a3a;
+}
+
+                                           /* ----------- Contact Section ---------- */
+.contact {
+  padding: 5rem 2rem;
+  background: var(--bg-color);
+}
+
+.contact h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 3rem;
+}
+
+.contact h2 span {
+  color: var(--text-color);
+}
+
+.contact form {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.input-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  background: #111;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  color: var(--text-color);
+}
+
+.contact textarea {
+  height: 220px;
+  resize: none;
+}
+
+                                        /* ---------- Footer section ----------- */
+.footer {
+  background: #111;
+  padding: 3rem 1rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.footer ul {
+  list-style: none;                           /*removes the default bullet points from the list*/
+  padding: 1rem 0;
+}
+
+.footer ul li {
+  display: inline;                             /* Displays list items  horizontally  and sizde by side*/
+  margin: 0 15px;
+}
+
+.footer ul li a {
+  color: #fff;
+  border-bottom: 2px solid transparent;       /*adds transparent border bottom*/
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  border-color: var(--main-color);
+}
+
+.footer .copyright {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+                              /* ----------- Skills Section ----------- */
+.skills {
+  background: radial-gradient(circle at center, rgba(183, 75, 75, 0.8) 0%, #000 80%);
+  box-shadow: 0 0 50px 25px rgba(183, 75, 75, 0.3) inset;
+  padding: 4rem 9%;
+  min-height: 100vh;
+}
+.skills .heading {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.skills-group {
+  margin-bottom: 3rem;
+}
+
+.skills-group h3 {
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.skill {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skill i {
+  margin-right: 1rem;
+  color: var(--main-color);
+}
+
+
+
+
+
+
+

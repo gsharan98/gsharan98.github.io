@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact </title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+ <!-- using Font Awesome CDN for icons -->
+</head>
+<body>
+<!------HEADER:section which consist of the logo and navigation menu-------->
+<header>
+<!-- Clicking logo takes you back to  homepage -->
+<a href="main.html" class="logo">Gursharan</a>
+
+<!-- Navigation links for different pages in the website-->
+<nav>
+   <a href="index.html">Home</a>
+   <a href="skills.html">Skills</a>
+   <a href="services.html">Services</a>
+   <a href="projects.html">Projects</a>
+   <a href="about.html">About Me</a>
+   <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="contact" id="contact">
+<!-- heading for Contact Me -->
+<h2 class="heading">Contact <span>Me</span></h2>
+
+<!-- Contact form -->
+<form action="#">
+<!-- Grouping inputs for layout -->
+<div class="input-group">
+<!--  Name and Email box -->
+<div class="input-box">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+</div>
+
+<!--Phone Number and Subject box -->
+ <div class="input-box">
+ <input type="number" placeholder="Phone Number" required>
+ <input type="text" placeholder="Subject">
+ </div>
+ </div>
+
+<!-- input(message) box-->
+<div class="input-group-2">
+<textarea placeholder="Your Message" required></textarea>
+
+<input type="submit" value="Send Message" class="btn"> <!-- Submit button -->
+</div>
+</form>
+</section>
+
+<!-- Footer with copyright -->
+<footer class="footer">
+<p>&copy; 2025 Gursharan. All rights reserved.</p>
+</footer>
+
+<!-- Link to JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
